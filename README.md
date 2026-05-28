@@ -4,6 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 
+[简体中文](./README_zh.md) | English
+
+
 This repository contains a reproducible research pipeline designed to measure and analyze source code token density across eight major programming languages: **C, C++, Go, Java, JavaScript, Python, Rust, and TypeScript**. 
 
 By evaluating how many tokens are required to implement identical functionality, we construct an empirical token-efficiency hierarchy. This is of critical importance in the LLM/Coding-Agent era, where token density directly impacts operational costs and context window utilization.
