@@ -1,0 +1,37 @@
+languages:
+  - id: python
+    display: Python
+    rosetta_names: ["Python"]
+    extensions: [".py"]
+  - id: javascript
+    display: JavaScript
+    rosetta_names: ["JavaScript", "ECMAScript"]
+    extensions: [".js", ".mjs"]
+  - id: typescript
+    display: TypeScript
+    rosetta_names: ["TypeScript"]
+    extensions: [".ts"]
+  - id: java
+    display: Java
+    rosetta_names: ["Java"]
+    extensions: [".java"]
+  - id: go
+    display: Go
+    rosetta_names: ["Go"]
+    extensions: [".go"]
+  - id: rust
+    display: Rust
+    rosetta_names: ["Rust"]
+    extensions: [".rs"]
+  - id: c
+    display: C
+    rosetta_names: ["C"]
+    extensions: [".c", ".h"]
+  - id: cpp
+    display: C++
+    rosetta_names: ["C++", "Cpp"]
+    extensions: [".cpp", ".cc", ".cxx", ".hpp", ".h"]
+primary_intersection:
+  required_languages: ["python", "javascript", "java", "go", "rust", "c"]
+  optional_languages: ["typescript", "cpp"]
+

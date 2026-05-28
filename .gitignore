@@ -1,0 +1,24 @@
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# Testing and linting caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Experiment raw/interim/processed data (fully reproducible)
+data/raw/*/
+!data/raw/rosettacode_COMMIT.txt
+data/interim/
+data/processed/
+data/results/
+
+# Log files
+*.log
+research_log/runs/*.jsonl

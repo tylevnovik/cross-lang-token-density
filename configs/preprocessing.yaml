@@ -1,0 +1,16 @@
+variants:
+  raw:
+    normalize_newlines: true
+    strip_trailing_whitespace: true
+    remove_shebang: false
+    remove_comments: false
+    remove_blank_lines: false
+  clean:
+    normalize_newlines: true
+    strip_trailing_whitespace: true
+    remove_shebang: true
+    remove_comments: true
+    remove_blank_lines: true
+  canonical:
+    base_variant: clean
+    formatter_required: false

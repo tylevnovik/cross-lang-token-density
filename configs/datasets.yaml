@@ -1,0 +1,12 @@
+datasets:
+  rosettacode:
+    source_uri: "https://github.com/acmeism/RosettaCodeData"
+    local_path: "data/raw/rosettacode"
+    phase: 1
+  leetcode:
+    source_uri: "https://github.com/kamyu104/LeetCode-Solutions"
+    local_path: "data/raw/leetcode"
+    phase: 2
+  github_projects:
+    phase: 3
+    keyword_file: "configs/github_keywords.yaml"

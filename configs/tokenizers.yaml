@@ -1,0 +1,12 @@
+tokenizers:
+  - id: cl100k_base
+    provider: openai
+    package: tiktoken
+    local: true
+  - id: o200k_base
+    provider: openai
+    package: tiktoken
+    local: true
+provider_api_tokenizers:
+  enabled_by_default: false
+  reason: "Vendor API token counting may incur cost and model availability changes; use for validation sample only."
