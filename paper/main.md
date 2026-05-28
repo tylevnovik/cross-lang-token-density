@@ -73,19 +73,19 @@ Under the Clean variant and `cl100k_base` tokenizer, the paired token count rati
 
 The global Kruskal-Wallis H test is highly significant ($p < 2.13 \times 10^{-15}$), verifying that the differences among languages are extremely strong. The results show that dynamic languages are highly token-efficient. C requires 77% more tokens than Python due to lack of higher-level structures, while Rust, Go, and Java require 47% to 57% more tokens.
 
-![Figure 1: Token Count Ratio to Python by Language](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/boxplot_token_count_by_language.png)
+![Figure 1: Token Count Ratio to Python by Language](../report/figures/boxplot_token_count_by_language.png)
 
 ### 6.2 Preprocessing Sensitivity (RQ2)
 
 Comparing Raw and Clean variants reveals comment density patterns. The ratio of Raw to Clean tokens is highest in C (1.21x) and JavaScript (1.16x), reflecting heavy comment use in educational codebases. In contrast, TypeScript (1.02x) and Rust (1.05x) have minimal comment overhead. Removing comments dynamically reduces agent context charges by up to 21% without losing functional semantics.
 
-![Figure 2: Comment & Blank Line Token Overhead by Language](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/raw_clean_delta_by_language.png)
+![Figure 2: Comment & Blank Line Token Overhead by Language](../report/figures/raw_clean_delta_by_language.png)
 
 ### 6.3 Tokenizer Bias (RQ3)
 
 Comparing `cl100k_base` (GPT-4) and `o200k_base` (GPT-4o) shows that the median paired ratios remain virtually unchanged. The rank order of languages is perfectly preserved, suggesting that BPE tokenizer updates do not introduce systematic bias toward specific programming syntax families.
 
-![Figure 3: Median Token Ratio to Python by Tokenizer](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/ratio_heatmap_by_tokenizer.png)
+![Figure 3: Median Token Ratio to Python by Tokenizer](../report/figures/ratio_heatmap_by_tokenizer.png)
 
 ### 6.4 Task Category Subgroups (RQ4)
 
@@ -113,7 +113,7 @@ Grouping tasks into specific domain categories exposes syntactic and structural 
 - **String Verbosity**: In `Text/String` processing, C language token overhead escalates to **2.78x** and Go to **1.84x**. C lacks built-in modern string manipulation APIs, forcing developers to implement verbose manual loops over character arrays or pointers.
 - **IO Boilerplate**: Under `System/IO`, static languages experience a massive token inflation (Go: 3.47x, Java: 3.08x, Rust: 3.00x). This is caused by the mandatory try-catch blocks (Java), explicit return-value checks (Go), or comprehensive result wrapping (Rust), which add extensive token overhead compared to Python's compact single-line IO operations.
 
-![Figure 4: Median Token Ratio to Python by Task Category](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/task_category_effects.png)
+![Figure 4: Median Token Ratio to Python by Task Category](../report/figures/task_category_effects.png)
 
 ### 6.5 Tokenization Fragmentation and Line Density (RQ5)
 
@@ -121,13 +121,13 @@ Analyzing Char-to-Token Ratio and Tokens-per-Line reveals language compression p
 - **Tokenizer Friendliness**: Java exhibits the highest Char-to-Token ratio (**3.91 characters per token**), indicating that its camelCase naming conventions match tokenizer vocabularies exceptionally well. In contrast, C exhibits the lowest ratio (**2.87**), meaning the tokenizer splits its syntax into much smaller, fragmented tokens due to widespread operators and single-character identifiers.
 - **SLOC Information Density**: Python yields the highest line density (**9.42 tokens/line**), showing its horizontal compactness. Conversely, Go yields the lowest (**7.13 tokens/line**), because the language style guidelines dictate vertical layouts with frequent newlines for error-checking blocks.
 
-![Figure 5: Tokenizer Fragmentation and Line Density](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/char_to_token_ratio.png)
+![Figure 5: Tokenizer Fragmentation and Line Density](../report/figures/char_to_token_ratio.png)
 
 ### 6.6 Robustness across Task Complexities
 
 The scatter distribution of paired language ratios across task sizes (using Python token count as a proxy for complexity) remains highly stable. The language ratio bands continue parallel without scaling drifts up to 1000 tokens.
 
-![Figure 6: Token Ratio Stability across Task Sizes](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/task_size_effects.png)
+![Figure 6: Token Ratio Stability across Task Sizes](../report/figures/task_size_effects.png)
 
 ---
 
@@ -146,7 +146,7 @@ Under the Clean variant and `cl100k_base` tokenizer, the results reveal key insi
 
    > The global **Kruskal-Wallis H test** across the three difficulty groups is extremely significant ($p = 1.53 \times 10^{-42}$), proving that algorithmic complexity systematically increases the relative verbosity of C++ compared to Python. In hard algorithmic tasks, developers must write verbose structural boilerplates (e.g., node allocations, pointer-based traversals, custom graph representations), whereas Python handles these complex structures with compact, built-in dynamic statements.
 
-![Figure 7: LeetCode C++ to Python Token Ratio by Difficulty](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/leetcode_boxplot_by_difficulty.png)
+![Figure 7: LeetCode C++ to Python Token Ratio by Difficulty](../report/figures/leetcode_boxplot_by_difficulty.png)
 
 3. **Sub-token Diagnostics**:
    - **Fragmentation**: C++ yields a Char-to-Token ratio of **3.84** and Python yields **3.93**. These values are notably higher than those in Rosetta Code, indicating high naming consistency in interview platforms.

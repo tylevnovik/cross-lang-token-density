@@ -61,10 +61,10 @@
 > 整体 Kruskal-Wallis H 检验在 $\alpha = 0.05$ 下高度显著 ($p = 2.13 \times 10^{-15}$)。
 
 **发现 1**：动态语言的 Token 表达效率在统计学上极其显著地优于静态语言。C 语言由于底层的繁琐操作和标准库缺失，消耗了最多的 Token。
-![语言 Token 比例箱线图](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/boxplot_token_count_by_language.png)
+![语言 Token 比例箱线图](figures/boxplot_token_count_by_language.png)
 
 对比 Raw 变体，C 语言由于拥有最多的注释开销，其注释与空行冗余达 **1.21x**；而 TypeScript (1.02x) 与 Rust (1.05x) 的注释冗余最低。这表明前置评论清理对 C 语言提示词优化最为有效。
-![注释冗余比例图](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/raw_clean_delta_by_language.png)
+![注释冗余比例图](figures/raw_clean_delta_by_language.png)
 
 ---
 
@@ -93,7 +93,7 @@
 1. **字符串处理的瓶颈**：在 `Text/String` 领域中，C 语言的 Token 消耗暴增至 **2.78 倍**，Go 也达 **1.84 倍**。这清晰反映出 C 语言缺乏现代高级字符串处理 API，往往需手动循环操作字符数组或指针；而 Go 的多返回值机制与显式 err 检查也在处理大量文本解析时引入了额外语法冗余。
 2. **系统 I/O 的代价**：在 `System/IO` 领域，静态编译型语言（Go: 3.47x, Java: 3.08x, Rust: 3.00x, C: 2.81x）呈现出全局性的 Token 负荷。这是因为这些语言需要使用繁琐的文件流管理、显式的错误拦截（如 Go 的 `if err != nil`，Rust 的 Match，Java 的 try-with-resources 等），相较于 Python 一行命令解决，开销增加了 3 倍。
 
-![任务类别影响柱状图](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/task_category_effects.png)
+![任务类别影响柱状图](figures/task_category_effects.png)
 
 ---
 
@@ -107,21 +107,21 @@
    - Python 以 **9.42 Tokens/Line** 夺魁，凸现其脚本语言的横向紧凑性。
    - Go 语言以 **7.13 Tokens/Line** 垫底。这主要源于 Go 语言强制性的换行排版和大量的错误处理分支，使得相同的 Token 被稀释在更多的行数（SLOC）中。
 
-![碎片化与行密度指标](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/char_to_token_ratio.png)
+![碎片化与行密度指标](figures/char_to_token_ratio.png)
 
 ---
 
 ### 4.4 分词算法的平移稳定性 (RQ3)
 在 `cl100k_base` 与 `o200k_base` 的对比中（图如下），两种分词表的中位数比例热力图几乎表现为完美的等价映射。这证实**即便升级分词表（如 GPT-4o 系列），各编程语言之间的语法结构差异依然是决定 Token 密度的决定性因素，分词算法并未改变这一本质排序**。
 
-![分词表对比热力图](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/ratio_heatmap_by_tokenizer.png)
+![分词表对比热力图](figures/ratio_heatmap_by_tokenizer.png)
 
 ---
 
 ### 4.5 任务规模的稳健性
 观察 Python Token 数量在 50 至 1000 范围内的分布（如下图），各语言的相对比例带基本呈平行线分布。这证明本研究所发现的 Token 倍率不因任务复杂度变化而产生系统性偏离，具有全尺度的稳定性。
 
-![任务规模稳定性散点图](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/task_size_effects.png)
+![任务规模稳定性散点图](figures/task_size_effects.png)
 
 ---
 
@@ -139,7 +139,7 @@
 
    > 跨越不同难度组的全局 **Kruskal-Wallis H 检验** 极其显著（$p = 1.53 \times 10^{-42}$），在统计学上证实了“题目难度和逻辑复杂度越深，C++ 相对于 Python 的 Token 冗余程度就被放大得越严重”。这主要是因为在应对困难算法时，C++ 常常需要大量的 boilerplate（如类属性结构定义、显式指针内存操作、复杂的迭代器类型拦截），而 Python 则能通过高表达力的动态数据结构（推导式、高级容器等）将冗余降到最低。
 
-![LeetCode 难度分组对比图](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/figures/leetcode_boxplot_by_difficulty.png)
+![LeetCode 难度分组对比图](figures/leetcode_boxplot_by_difficulty.png)
 
 3. **碎片化与行密度底细**：
    - 在分词碎片化（Char-to-Token Ratio）上，Python 为 **3.93**，C++ 为 **3.84**。这显著高于 Rosetta Code 的单字符碎片化，反映了 LeetCode 编码命名的高规范性。

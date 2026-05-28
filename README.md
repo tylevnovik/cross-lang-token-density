@@ -102,10 +102,10 @@ uv run pytest -v
 
 ## Documents & Reports
 
-- **Methodology**: [docs/methodology.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/docs/methodology.md)
-- **Data Dictionary**: [docs/data-dictionary.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/docs/data-dictionary.md)
-- **Technical Report (CN)**: [report/report_zh.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/report_zh.md)
-- **Academic Paper Draft (EN)**: [paper/main.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/paper/main.md)
+- **Methodology**: [docs/methodology.md](./docs/methodology.md)
+- **Data Dictionary**: [docs/data-dictionary.md](./docs/data-dictionary.md)
+- **Technical Report (CN)**: [report/report_zh.md](./report/report_zh.md)
+- **Academic Paper Draft (EN)**: [paper/main.md](./paper/main.md)
 
 ---
 

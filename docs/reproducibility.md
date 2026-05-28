@@ -43,13 +43,13 @@ make reproduce
 运行上述命令后，将产生以下核心结果文件：
 
 - 数据文件：
-  - [code_variants.parquet](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/data/processed/code_variants.parquet)
-  - [token_counts.parquet](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/data/processed/token_counts.parquet)
-  - [equivalence_groups.csv](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/data/processed/equivalence_groups.csv)
+  - [code_variants.parquet](../data/processed/code_variants.parquet)
+  - [token_counts.parquet](../data/processed/token_counts.parquet)
+  - [equivalence_groups.csv](../data/processed/equivalence_groups.csv)
 - 统计检验与分析结果：
-  - [summary_by_language.csv](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/data/results/summary_by_language.csv)
-  - [stat_tests.csv](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/data/results/stat_tests.csv)
-  - [sensitivity_analysis.csv](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/data/results/sensitivity_analysis.csv)
+  - [summary_by_language.csv](../data/results/summary_by_language.csv)
+  - [stat_tests.csv](../data/results/stat_tests.csv)
+  - [sensitivity_analysis.csv](../data/results/sensitivity_analysis.csv)
 - 核心可视化图表（位于 `report/figures/`）：
   - `boxplot_token_count_by_language.png`
   - `ratio_heatmap_by_tokenizer.png`

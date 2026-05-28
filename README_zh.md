@@ -102,10 +102,10 @@ uv run pytest -v
 
 ## 相关技术文档
 
-- **方法论设计书**：[docs/methodology.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/docs/methodology.md)
-- **数据字典定义**：[docs/data-dictionary.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/docs/data-dictionary.md)
-- **中文技术报告 (CN)**：[report/report_zh.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/report/report_zh.md)
-- **英文学术论文 (EN)**：[paper/main.md](file:///c:/Users/blmpt/Downloads/workspace/cross-lang-token-density/paper/main.md)
+- **方法论设计书**：[docs/methodology.md](./docs/methodology.md)
+- **数据字典定义**：[docs/data-dictionary.md](./docs/data-dictionary.md)
+- **中文技术报告 (CN)**：[report/report_zh.md](./report/report_zh.md)
+- **英文学术论文 (EN)**：[paper/main.md](./paper/main.md)
 
 ---
 
